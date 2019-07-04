@@ -33,6 +33,6 @@ def play_generated_song(generated_text):
     for song in songs:
         basename = save_song_to_abc(song)
         ret = abc2wav(basename+'.abc')
-        if ret == 0: #did not suceed
+        if ret != 0: #did not suceed
             return play_wav(basename+'.wav')
     print "None of the songs were valid, try training longer to improve syntax."
